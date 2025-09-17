@@ -24,22 +24,22 @@ def read_modis(file_path, var_name):
 
 print(read_modis("MYD11A1.A2023001.h18v07.061.2023006121605.hdf","LST_Night_1km"))
 
-# def inverse_maps(H,V,size):
-#     Lat=np.zeros((size,size))
-#     Lon=np.zeros((size,size))
-#     R=6371007.181
-#     T = 1111950
-#     xmin = -20015109.
-#     ymax = 10007555.
-#     w = T /size
-#     y=np.array([(ymax-(i+.5)*w-V*T) for i in range(size)] )
-#     x =np.array([((j+.5)*w + (H)*T + xmin) for j in range(size)])
-#     for i, yy in enumerate(y):
-#         for j, xx in enumerate(x):
-#             ll=yy/R
-#             Lat[i,j]=ll*180/np.pi
-#             Lon[i,j]=180/np.pi*(xx/(R*np.cos(ll)))
-#     return Lat, Lon
+def inverse_maps(H,V,size):
+    Lat=np.zeros((size,size))
+    Lon=np.zeros((size,size))
+    R=6371007.181
+    T = 1111950
+    xmin = -20015109.
+    ymax = 10007555.
+    w = T /size
+    y=np.array([(ymax-(i+.5)*w-V*T) for i in range(size)] )
+    x =np.array([((j+.5)*w + (H)*T + xmin) for j in range(size)])
+    for i, yy in enumerate(y):
+        for j, xx in enumerate(x):
+            ll=yy/R
+            Lat[i,j]=ll*180/np.pi
+            Lon[i,j]=180/np.pi*(xx/(R*np.cos(ll)))
+    return Lat, Lon
 
 # def LST_extraction(input_folder, var, qc_var, varo, output_folder):
 #     os.makedirs(output_folder, exist_ok=True)
