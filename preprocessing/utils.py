@@ -22,7 +22,7 @@ def read_modis(file_path, var_name):
 
 
 
-print(read_modis("MYD11A1.A2023001.h18v07.061.2023006121605.hdf","LST_Night_1km"))
+print("hello")
 
 def inverse_maps(H,V,size):
     Lat=np.zeros((size,size))
