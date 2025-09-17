@@ -22,8 +22,6 @@ def read_modis(file_path, var_name):
 
 
 
-print("hello")
-
 def inverse_maps(H,V,size):
     Lat=np.zeros((size,size))
     Lon=np.zeros((size,size))
