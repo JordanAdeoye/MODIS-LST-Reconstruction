@@ -1,0 +1,5 @@
+cdo remapbil,grid_h18_v07.txt preprocessing_era5/2m_temperature_rewriten_merged.nc 2m_temperature_rewriten_merged_remapped.nc
+
+
+cdo remapbil,grid_h18_v07.txt preprocessing_era5/skin_temperature_rewriten_merged.nc skin_temperature_rewriten_merged_remapped.nc
+

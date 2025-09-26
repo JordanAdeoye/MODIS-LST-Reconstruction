@@ -1,0 +1,3 @@
+cdo mergetime 2m_temperature_rewriten/* 2m_temperature_rewriten_merged.nc
+
+cdo mergetime skin_temperature_rewriten/* skin_temperature_rewriten_merged.nc
