@@ -22,6 +22,41 @@
 
 
 
+
+
+├── download_era5/                      # Scripts and data for downloading ERA5 datasets
+│   ├── 2m_temp_2022_2024_africa/       # ERA5 2-meter temperature data storage
+│   ├── skin_temp_2022_2024_africa/     # ERA5 skin temperature data storage
+│   ├── download_era5_2mtemp.py         # Script for 2m temperature download
+│   └── download_era5_skintemp.py       # Script for skin temperature download
+│
+├── download_modis/                     # Scripts for downloading MODIS LST products
+│   ├── MOD11A1_Africa_final/           # Unpacked MOD11A1 (Terra) data
+│   ├── MYD11A1_Africa_final/           # Unpacked MYD11A1 (Aqua) data
+│   ├── download_mod11a1_africa.sh      # Download script for Terra satellite
+│   └── download_myd11a1_africa.sh      # Download script for Aqua satellite
+│
+├── era5_modis_interpolation/           # Temporal interpolation of ERA5 to MODIS timestamps
+│   ├── utils.py                        # Interpolation functions for skin temperature
+│   ├── utils_2m.py                     # Interpolation functions for 2m temperature
+│   ├── main_.py                       # Execution scripts for skin temperature
+│   ├── 2m_main_.py                    # Execution scripts for 2m temperature
+│   └── interp_*/                       # Output directories for interpolated data
+│
+├── era5_remapped/                      # ERA5 spatial remapping to MODIS grid
+│   ├── grid_h18_v07.txt                # MODIS grid specification
+│   └── remap_command.txt               # CDO commands for bilinear interpolation
+│
+├── preprocessing/                      # MODIS data preprocessing
+│   │                                   # QA assessment, day/night separation, NetCDF conversion
+│   └── *_treated/                      # Processed MODIS data by satellite and time
+│
+└── preprocessing_era5/                 # ERA5 data preprocessing
+├── rewrite.py                      # NetCDF conversion functions
+├── mergetime_command.txt           # CDO merge commands
+└── _rewriten/                    # Rewritten and merged ERA5 data
+
+
 # Clone the repo
 
 git clone https://github.com/JordanAdeoye/MODIS-LST-Reconstruction.git
