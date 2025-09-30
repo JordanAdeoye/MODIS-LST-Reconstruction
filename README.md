@@ -3,6 +3,43 @@
 ## Repository Structure
 
 ├── download_era5/                # Scripts and data for downloading ERA5 datasets
+
+│   ├── 2m_temp_2022_2024_africa/ # Where Era5 2m temperature data is stored
+
+│   ├── skin_temp_2022_2004_africa/ # Where Era5 Skin temperature data is stored
+
+│   ├── download_era5_2mtemp/     # Scripts for 2m temperature download
+
+│   └── download_era5_skintemp/   # Scripts for skin temperature download
+
+│
+
+├── download_modis/               # Scripts for downloading MODIS LST products
+
+│   ├── download_mod11a1_africa.sh
+
+│   └── download_myd11a1_africa.sh
+
+│
+
+├── era5_modis_interpolation/     # Python scripts for interpolating ERA5 to MODIS grid (the prepares it for training)
+
+│
+
+├── era5_remapped/                # ERA5 remapping configurations
+
+│
+
+├── preprocessing/                # Preprocessing Modis data(QA assessment, saving if the image was taken to a different(day or night) and saving it to netcdf)
+
+│
+
+├── preprocessing_era5/           # Preprocessing Era5 data(rewrite to netcdf and then merge into a single netcdf file)
+
+
+## Repository Structure
+
+├── download_era5/                # Scripts and data for downloading ERA5 datasets
 │   ├── 2m_temp_2022_2024_africa/ # Where Era5 2m temperature data is stored
 │   ├── skin_temp_2022_2004_africa/ # Where Era5 Skin temperature data is stored
 │   ├── download_era5_2mtemp/     # Scripts for 2m temperature download
