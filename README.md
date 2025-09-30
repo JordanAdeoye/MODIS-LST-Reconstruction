@@ -1,34 +1,12 @@
 
-
 ## Repository Structure
 
-├── download_era5/                # Scripts and data for downloading ERA5 datasets
-│   ├── 2m_temp_2022_2024_africa/ # Where Era5 2m temperature data is stored
-│   ├── skin_temp_2022_2004_africa/ # Where Era5 Skin temperature data is stored
-│   ├── download_era5_2mtemp/     # Scripts for 2m temperature download
-│   └── download_era5_skintemp/   # Scripts for skin temperature download
-│
-├── download_modis/               # Scripts for downloading MODIS LST products
-│   ├── download_mod11a1_africa.sh
-│   └── download_myd11a1_africa.sh
-│
-├── era5_modis_interpolation/     # Python scripts for interpolating ERA5 to MODIS grid (the prepares it for training)
-│
-├── era5_remapped/                # ERA5 remapping configurations
-│
-├── preprocessing/                # Preprocessing Modis data(QA assessment, saving if the image was taken to a different(day or night) and saving it to netcdf)
-│
-├── preprocessing_era5/           # Preprocessing Era5 data(rewrite to netcdf and then merge into a single netcdf file)
-
-
-
-
-
+```
 ├── download_era5/                      # Scripts and data for downloading ERA5 datasets
-│   ├── 2m_temp_2022_2024_africa/       # ERA5 2-meter temperature data storage
-│   ├── skin_temp_2022_2024_africa/     # ERA5 skin temperature data storage
-│   ├── download_era5_2mtemp.py         # Script for 2m temperature download
-│   └── download_era5_skintemp.py       # Script for skin temperature download
+│   ├── 2m_temp_2022_2024_africa/       # Where ERA5 2m temperature data is stored
+│   ├── skin_temp_2022_2024_africa/     # Where ERA5 skin temperature data is stored
+│   ├── download_era5_2mtemp.py         # Scripts for 2m temperature download
+│   └── download_era5_skintemp.py       # Scripts for skin temperature download
 │
 ├── download_modis/                     # Scripts for downloading MODIS LST products
 │   ├── MOD11A1_Africa_final/           # Unpacked MOD11A1 (Terra) data
@@ -36,41 +14,38 @@
 │   ├── download_mod11a1_africa.sh      # Download script for Terra satellite
 │   └── download_myd11a1_africa.sh      # Download script for Aqua satellite
 │
-├── era5_modis_interpolation/           # Temporal interpolation of ERA5 to MODIS timestamps
-│   ├── utils.py                        # Interpolation functions for skin temperature
-│   ├── utils_2m.py                     # Interpolation functions for 2m temperature
-│   ├── main_.py                       # Execution scripts for skin temperature
-│   ├── 2m_main_.py                    # Execution scripts for 2m temperature
-│   └── interp_*/                       # Output directories for interpolated data
+├── era5_modis_interpolation/           # Python scripts for interpolating ERA5 to MODIS grid (prepares it for training)
 │
-├── era5_remapped/                      # ERA5 spatial remapping to MODIS grid
-│   ├── grid_h18_v07.txt                # MODIS grid specification
-│   └── remap_command.txt               # CDO commands for bilinear interpolation
+├── era5_remapped/                      # ERA5 remapping configurations
 │
-├── preprocessing/                      # MODIS data preprocessing
-│   │                                   # QA assessment, day/night separation, NetCDF conversion
-│   └── *_treated/                      # Processed MODIS data by satellite and time
+├── preprocessing/                      # Preprocessing MODIS data (QA assessment, day/night separation, saving to netcdf)
 │
-└── preprocessing_era5/                 # ERA5 data preprocessing
-├── rewrite.py                      # NetCDF conversion functions
-├── mergetime_command.txt           # CDO merge commands
-└── _rewriten/                    # Rewritten and merged ERA5 data
+└── preprocessing_era5/                 # Preprocessing ERA5 data (rewrite to netcdf and merge into a single netcdf file)              
+```
 
 
-# Clone the repo
 
+# Clone the Repo
+
+```bash
 git clone https://github.com/JordanAdeoye/MODIS-LST-Reconstruction.git
 cd MODIS-LST-Reconstruction
+```
+
 
 # Install Dependencies
 
-# If running locally(would not suggest)/EC2
+## If running locally (not recommended) or on EC2
 
+```bash
 sudo apt-get update
 sudo apt-get install -y gcc gfortran libopenmpi-dev openmpi-bin libhdf4-dev libhdf5-dev libnetcdf-dev proj-bin cdo
 pip install -r requirements.txt
+```
 
-# If running on AllianceCan HPC(As i did) 
+## If running on AllianceCan HPC (as I did)
+
+```bash
 module load python/3.11.5
 module load hdf/4.2.16
 module load gcc/12.3
@@ -82,7 +57,7 @@ module load proj/9.4.1
 module load cdo/2.2.2
 
 pip install -r requirements.txt
-
+```
 
 
 # Workflow

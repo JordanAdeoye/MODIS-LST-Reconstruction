@@ -1,0 +1,14 @@
+netCDF4
+xarray
+rioxarray
+numpy
+pandas
+pyhdf
+matplotlib
+geopandas
+regionmask
+cartopy
+scipy
+joblib
+cdsapi
+
