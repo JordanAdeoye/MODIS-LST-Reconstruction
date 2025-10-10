@@ -20,7 +20,9 @@
 │
 ├── preprocessing/                      # Preprocessing MODIS data (QA assessment, day/night separation, saving to netcdf)
 │
-└── preprocessing_era5/                 # Preprocessing ERA5 data (rewrite to netcdf and merge into a single netcdf file)              
+├── preprocessing_era5/                 # Preprocessing ERA5 data (rewrite to netcdf and merge into a single netcdf file)
+│
+└── visualization.ipynb                 # Visualzes the output of the interpolation             
 ```
 
 
@@ -230,7 +232,7 @@ python era5_modis_interpolation/main_night_Terra.py      # Nighttime, Terra sate
 * `era5_modis_interpolation/2m_interp_day_Terra/`
 * `era5_modis_interpolation/2m_interp_night_Aqua/`
 * `era5_modis_interpolation/2m_interp_night_Terra/`
-   
+  
 
    
    
